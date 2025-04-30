@@ -1,6 +1,6 @@
 import pygame
 from pygame.locals import *
-from time import
+from time import *
 
 pygame.init()
 screen = pygame.display.set_mode((600,600))
@@ -30,7 +30,7 @@ while player_y < 600:
             elif event.key==K_RIGHT:
                 keys[3]=True
 
-        if event.type == pygame.KEYDOWN:
+        if event.type == pygame.KEYUP:
             if event.key==K_UP:
                 keys[0]=False
             elif event.key==K_LEFT:
@@ -39,3 +39,21 @@ while player_y < 600:
                 keys[2]=False
             elif event.key==K_RIGHT:
                 keys[3]=False
+    #if the up button is pressed
+    if keys [0]:
+        if player_y> 0:
+            player_y -=1
+    
+    elif keys [1]:
+        if player_x> 0:
+            player_x -=1
+
+    elif keys [2]:
+        if player_y< 500:
+            player_y +=1
+
+    elif keys [3]:
+        if player_x< 500:
+            player_x +=1
+
+    
